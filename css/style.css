@@ -3,8 +3,12 @@ h1 {
 }
 
 button {
-    padding: 10px;
     font-size: medium;
+    background-color: rgb(240, 240, 240);
+}
+
+button:active {
+    background-color: rgb(200, 200, 200);
 }
 
 .center {
@@ -19,6 +23,27 @@ button {
     padding: 30px;
 }
 
+.copy-button {
+    align-self: flex-start;
+    margin-top: 30px;
+    padding: 5px;
+    display: none;  /* changes to flex when text is generated */
+    justify-content: center;
+    align-content: center;
+
+    /* set to relative to allow offsetting tooltip */
+    position: relative;
+}
+
+.output-box {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.pad10 {
+    padding: 10px;
+}
+
 .round-border {
     border: 2px solid black;
     border-radius: 12px;
@@ -29,6 +54,17 @@ button {
     justify-content: center;
     margin-bottom: 30px;
     accent-color: rgb(55, 55, 50);
+}
+
+.tooltip {
+    position: absolute;
+    bottom: 40px;
+    left: 5px;
+    background-color: rgb(255, 255, 255);
+    width: max-content;
+    padding: 5px;
+    z-index: 6;
+    display: none;  /* hidden until mouseover */
 }
 
 .width90 {

@@ -1,6 +1,8 @@
 
-const btn = document.querySelector('button');
+const btns = document.querySelectorAll('button');
 const slider = document.querySelector('input#length');
+const generate = btns[0]
+const copy = btns[1]
 
 const lorems = ['adipisci', 'agricolam', 'aliquam', 'amant', 'amet', 'aspernatur', 'assumenda', 'atque', 'autem', 'beatae', 'consectetur', 'corporis', 'corrupti', 'culpa', 'curabitur', 'delectus', 'dicta', 'dignissimos', 'distinctio', 'dolorem', 'dominam', 'elegendi', 'est', 'eveniet', 'excepturi', 'expedita', 'facere', 'felis', 'fera', 'fuga', 'illum', 'impedit', 'iusto', 'laborum', 'laudantium', 'libero', 'magnam', 'maiores', 'maximae', 'modi', 'mollitia', 'natus', 'nautae', 'nemo', 'nihil', 'nobis', 'nostrum', 'nullam', 'odit', 'omnis', 'pariatur', 'parva', 'paxum', 'perferendis', 'portat', 'praesentium', 'puella', 'pugnant', 'quibusdam', 'quidem', 'quod', 'quos', 'ratione', 'recusandae', 'reiciendis', 'repellendus', 'reprehenderit', 'repudiandae', 'rerum', 'sagitta', 'sapiente', 'sequi', 'sic', 'similique', 'silvam', 'suscipit', 'tempore', 'totam', 'tristique', 'turpis', 'ullam', 'vehicula', 'veniam', 'vero', 'vitae'];
 
@@ -9,10 +11,13 @@ const rocks = ['agate', 'amethyst', 'andesite', 'apatite', 'barite', 'basalt', '
 let words = ['', '', '', '', '', '', '', ''];
 
 // when button is clicked, this will all run:
-btn.addEventListener('click', function() {
+generate.addEventListener('click', function() {
     const sentences = Number(slider.value);
     let story = `Lorem gypsum dolor `;
     let index = 0;
+
+    // unhide copy button
+    copy.style.display = 'flex';
 
     // loop
     for(i=0;i<sentences;i++) {
@@ -90,10 +95,27 @@ btn.addEventListener('click', function() {
     
     document.querySelector('p').innerText = story;
     
-    btn.innerText = 'Change it';
+    generate.innerText = 'Change it';
     story =``
 });
 
+// copy to clipboard
+copy.addEventListener('click', function() {
+    const story = document.querySelector('p').innerText;
+    navigator.clipboard.writeText(story);
+})
+
+// tooltip when hovering over "Copy"  button
+copy.addEventListener('mouseenter', function() {
+    const tip = document.querySelector('.tooltip');
+    tip.style.display = 'inline'
+})
+
+// tooltip disappears when not hovering over "Copy"  button
+copy.addEventListener('mouseleave', function() {
+    const tip = document.querySelector('.tooltip');
+    tip.style.display = 'none'
+})
 
 function capitalize(word) {
     const firstLetter = word.slice(0, 1);
