@@ -19,7 +19,6 @@ button:active {
 
 .controls {
     width: 200px;
-    border: 1px solid black;
     padding: 30px;
 }
 
@@ -33,6 +32,11 @@ button:active {
 
     /* set to relative to allow offsetting tooltip */
     position: relative;
+}
+
+.main-colors {
+    background-color: white;
+    color: black;
 }
 
 .output-box {
@@ -59,8 +63,7 @@ button:active {
 .tooltip {
     position: absolute;
     bottom: 40px;
-    left: 5px;
-    background-color: rgb(255, 255, 255);
+    left: 5px;;
     width: max-content;
     padding: 5px;
     z-index: 6;
@@ -69,4 +72,18 @@ button:active {
 
 .width90 {
     width: 90%;
+}
+
+/* change color scheme for users in dark mode */
+@media (prefers-color-scheme: dark) {
+    .main-colors {
+        background-color: black;
+        color: white;
+    }
+    .round-border {
+        border-color: white;
+    }
+    .slider {
+        accent-color: rgb(235, 235, 230);
+    }
 }
