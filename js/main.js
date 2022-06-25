@@ -17,7 +17,7 @@ generate.addEventListener('click', function() {
     let index = 0;
 
     // unhide copy button
-    copy.style.display = 'block';
+    copy.style.display = 'flex';
 
     // loop
     for(i=0;i<sentences;i++) {

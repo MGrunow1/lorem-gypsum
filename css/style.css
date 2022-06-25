@@ -21,7 +21,10 @@ button {
 .copy-button {
     align-self: flex-start;
     margin-top: 30px;
-    display: none;
+    padding: 5px;
+    display: none;  /* changes to flex */
+    justify-content: center;
+    align-content: center;
 }
 
 .output-box {
