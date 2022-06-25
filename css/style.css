@@ -27,9 +27,12 @@ button:active {
     align-self: flex-start;
     margin-top: 30px;
     padding: 5px;
-    display: none;  /* changes to flex */
+    display: none;  /* changes to flex when text is generated */
     justify-content: center;
     align-content: center;
+
+    /* set to relative to allow offsetting tooltip */
+    position: relative;
 }
 
 .output-box {
@@ -51,6 +54,17 @@ button:active {
     justify-content: center;
     margin-bottom: 30px;
     accent-color: rgb(55, 55, 50);
+}
+
+.tooltip {
+    position: absolute;
+    bottom: 40px;
+    left: 5px;
+    background-color: rgb(255, 255, 255);
+    width: max-content;
+    padding: 5px;
+    z-index: 6;
+    display: none;  /* hidden until mouseover */
 }
 
 .width90 {

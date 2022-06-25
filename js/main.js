@@ -105,6 +105,18 @@ copy.addEventListener('click', function() {
     navigator.clipboard.writeText(story);
 })
 
+// tooltip when hovering over "Copy"  button
+copy.addEventListener('mouseenter', function() {
+    const tip = document.querySelector('.tooltip');
+    tip.style.display = 'inline'
+})
+
+// tooltip disappears when not hovering over "Copy"  button
+copy.addEventListener('mouseleave', function() {
+    const tip = document.querySelector('.tooltip');
+    tip.style.display = 'none'
+})
+
 function capitalize(word) {
     const firstLetter = word.slice(0, 1);
     const rest = word.slice(1, word.length);
