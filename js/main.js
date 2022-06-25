@@ -99,6 +99,11 @@ generate.addEventListener('click', function() {
     story =``
 });
 
+// copy to clipboard
+copy.addEventListener('click', function() {
+    const story = document.querySelector('p').innerText;
+    navigator.clipboard.writeText(story);
+})
 
 function capitalize(word) {
     const firstLetter = word.slice(0, 1);
