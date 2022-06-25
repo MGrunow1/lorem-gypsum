@@ -63,7 +63,7 @@ button:active {
 .tooltip {
     position: absolute;
     bottom: 40px;
-    left: 5px;;
+    left: 5px;
     width: max-content;
     padding: 5px;
     z-index: 6;
@@ -71,7 +71,9 @@ button:active {
 }
 
 .width90 {
-    width: 90%;
+    width: 99%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* change color scheme for users in dark mode */
@@ -85,5 +87,12 @@ button:active {
     }
     .slider {
         accent-color: rgb(235, 235, 230);
+    }
+}
+
+/* make output display responsive to screen width */
+@media screen and (min-width: 500px) {
+    .width90 {
+        width: 90%;
     }
 }
